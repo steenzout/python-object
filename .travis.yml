@@ -30,3 +30,12 @@ script:
 after_success:
   - pip install coveralls
   - coveralls
+
+deploy:
+  provider: pypi
+  user: steenzout
+  password:
+    secure: jde3WDudGoRBGZBrVDZIcAtu90cvje//fPqpzFtSBTg3LVpPKW/RT3sYcQQ4NcNzQpmKX2KeG7+CCilf4mNHlGUc191ZgfwazCdKb6/s/HffbPKHk8yAoQiCDkz29M4Tq4yY56nmm1tmPSN0OhBMYnywN6BbkGX9PAlq7Vv4XwnAGsJav4wJ6LE2OezPxqidirZaADdO9DXSTnxJ0d8xLCg8Eq9UXV8PI+w6s6FNTWMJKmdmvrsicu2aeV2HiUNfEduIbFsocD+bq8uZ6tcteY+W+vuwPospGOzxAUAPKC8fYSLu3uHNyCThFykg2fbUFxTYw2aaMtZbPHDDhuJ8toibt+61HyD3y8+KT5JjL4RxF5vMpFIjBXS1p/tgjtOYU2d+E4/8doi98dQO9nsnTFwewIG9PDLjU+PjCoZMtmSwmN3zmjUfvs1PUAgHce31P3hCP2akhfLjXyQU7JyjUU371CJr1V5hnd2JwWGmclXj/vUc0Xsa62cwyhP+uq3lJtlsZMSs1OlZ2D5t/oz3ozFQLTq/YWeV5BdPqW0REzgenBNUTd7LJsx4WNzAIRDi7JVDvWUm1w1sRsRh/fUxalm+UeVedqdbnb3ANWyTiKG2PJXmXSip6kBXZ+sa6PBPpWLUozHYw1YIlyBupTLYR/EQqg8SSN+XJMTVHIZ0C0Y=
+  on:
+    branch: master
+    tags: true
