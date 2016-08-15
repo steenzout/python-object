@@ -7,18 +7,18 @@ from pip.req import parse_requirements
 
 from setuptools import find_packages, setup
 
-execfile('company/package/version.py')
+exec(open('steenzout/object/version.py').read())
 
-setup(name='primogen',
+setup(name='steenzout.object',
       version=__version__,
-      description='Python basic package.',
+      description='Steenzout Python objects.',
       author='Pedro Salgado',
       author_email='steenzout@ymail.com',
       maintainer='Pedro Salgado',
       maintainer_email='steenzout@ymail.com',
-      url='https://github.com/steenzout/python-primogen',
-      namespace_packages=('company',),
-      packages=find_packages(exclude=('*.tests', '*.tests.*', 'tests.*', 'tests', 'company')),
+      url='https://github.com/steenzout/python-object',
+      namespace_objects=('steenzout',),
+      packages=find_packages(exclude=('*.tests', '*.tests.*', 'tests.*', 'tests', 'steenzout')),
       install_requires=[
             str(pkg.req) for pkg in parse_requirements(
                     'requirements.txt', session=pip.download.PipSession())],
