@@ -15,6 +15,6 @@
 # limitations under the License.
 #
 """
-Steenzout namespace json.
+Steenzout namespace package.
 """
 __import__('pkg_resources').declare_namespace(__name__)
