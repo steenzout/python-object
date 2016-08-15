@@ -46,10 +46,10 @@ class Object(object):
         Rich comparison function for the `==` operator.
 
         :param other: instance to be compared against.
-        :type other: :class:`Serializable`.
+        :type other: :class:`Object`.
 
         :raises: :class:`exceptions.NotImplementedError`
-            in case the `other` instance is not a `Serializable` object.
+            in case the `other` instance is not a `Object` object.
 
         :return: True in case both instances represent the same object;
             False otherwise.
@@ -67,10 +67,10 @@ class Object(object):
         Rich comparison function for the `!=` operator.
 
         :param other: instance to be compared against.
-        :type other: :class:`Serializable`.
+        :type other: :class:`Object`.
 
         :raises: :class:`exceptions.NotImplementedError`
-            in case the `other` instance is not a `Serializable` object.
+            in case the `other` instance is not a `Object` object.
 
         :return: True in case `self` and `other`
             do not represent the same object; False otherwise.
