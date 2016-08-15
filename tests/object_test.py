@@ -5,14 +5,6 @@ import unittest
 from steenzout.object import Object
 
 
-class MockA(Object):
-    pass
-
-
-class MockB(object):
-    pass
-
-
 class ObjectTestCase(unittest.TestCase):
     """Test case for the Object class."""
 
@@ -21,7 +13,7 @@ class ObjectTestCase(unittest.TestCase):
 
         o1 = Object()
         o2 = Object()
-        a = MockA()
+        a = object()
 
         self.assertEqual(hash(o1), hash(o2))
         self.assertNotEqual(hash(o1), hash(a))
@@ -31,7 +23,7 @@ class ObjectTestCase(unittest.TestCase):
 
         o1 = Object()
         o2 = Object()
-        a = MockA()
+        a = object()
 
         self.assertTrue(o1 == o1)
         self.assertTrue(o1 == o2)
@@ -44,7 +36,7 @@ class ObjectTestCase(unittest.TestCase):
 
         o1 = Object()
         o2 = Object()
-        a = MockA()
+        a = object()
 
         self.assertFalse(o1 != o1)
         self.assertFalse(o1 != o2)
