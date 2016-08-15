@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 #
 # Copyright 2016 Pedro Salgado
 #
@@ -15,6 +15,9 @@
 # limitations under the License.
 #
 """
-Steenzout namespace package.
+.. module:: steenzout
+    :synopsis: github organization namespace package.
+
+.. moduleauthor:: Pedro Salgado <steenzout@ymail.com>
 """
 __import__('pkg_resources').declare_namespace(__name__)
