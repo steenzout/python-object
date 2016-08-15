@@ -23,3 +23,59 @@
 """
 
 from steenzout.object.version import __version__
+
+
+class Object(object):
+    """
+    Object class with a `__hash__`, `__eq__` and `__ne__` implementations.
+    """
+
+    def __hash__(self):
+        """
+        Called by built-in function :function:`object.__hash__` and
+        for operations on members of hashed collections
+        (see :function:`object.__hash__`).
+
+        :return: hash value.
+        :rtype: integer
+        """
+        return hash(tuple(sorted(self.__dict__.items())))
+
+    def __eq__(self, other):
+        """
+        Rich comparison function for the `==` operator.
+
+        :param other: instance to be compared against.
+        :type other: :class:`Serializable`.
+
+        :raises: :class:`exceptions.NotImplementedError`
+            in case the `other` instance is not a `Serializable` object.
+
+        :return: True in case both instances represent the same object;
+            False otherwise.
+        :rtype: bool
+        """
+        if other is self:
+            return True
+        if type(other) is type(self):
+            return self.__dict__ == other.__dict__
+        else:
+            return NotImplemented
+
+    def __ne__(self, other):
+        """
+        Rich comparison function for the `!=` operator.
+
+        :param other: instance to be compared against.
+        :type other: :class:`Serializable`.
+
+        :raises: :class:`exceptions.NotImplementedError`
+            in case the `other` instance is not a `Serializable` object.
+
+        :return: True in case `self` and `other`
+            do not represent the same object; False otherwise.
+        :rtype: bool
+        """
+        if type(other) is type(self):
+            return not self == other
+        return NotImplemented
