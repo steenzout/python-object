@@ -76,6 +76,6 @@ class Object(object):
             do not represent the same object; False otherwise.
         :rtype: bool
         """
-        if type(other) is type(self):
+        if isinstance(other, self.__class__):
             return not self == other
         return NotImplemented
