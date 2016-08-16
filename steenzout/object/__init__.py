@@ -26,7 +26,7 @@ from steenzout.object.version import __version__
 
 class Object(object):
     """
-    Object class with a `__hash__`, `__eq__` and `__ne__` implementations.
+    Object class with a `__hash__`, `__eq__` and `__ne__` implementation.
     """
 
     def __hash__(self):
