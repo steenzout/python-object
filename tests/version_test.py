@@ -12,7 +12,8 @@ class VersionTestCase(unittest.TestCase):
         """
         Tests the version module attributes.
         """
-        from steenzout.object import version
+        import steenzout.object
 
-        self.assertFalse(version.__dict__ is None)
-        self.assertTrue('__version__' in version.__dict__)
+        self.assertTrue(
+            steenzout.object.version() == steenzout.object.__version__
+        )
