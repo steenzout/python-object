@@ -16,7 +16,6 @@
 #
 """
 .. module:: steenzout.object
-    :platform: Unix
     :synopsis: Python object package.
 
 .. moduleauthor:: Pedro Salgado <steenzout@ymail.com>
