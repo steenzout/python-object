@@ -21,11 +21,11 @@ setup(name='steenzout.object',
       packages=find_packages(exclude=('*.tests', '*.tests.*', 'tests.*', 'tests', 'steenzout')),
       package_data={'': ['LICENSE', 'NOTICE.md']},
       install_requires=[
-            str(pkg.req) for pkg in parse_requirements(
-                    'requirements.txt', session=pip.download.PipSession())],
+          str(pkg.req) for pkg in parse_requirements(
+              'requirements.txt', session=pip.download.PipSession())],
       tests_require=[
-            str(pkg.req) for pkg in parse_requirements(
-                    'test-requirements.txt', session=pip.download.PipSession())],
+          str(pkg.req) for pkg in parse_requirements(
+              'test-requirements.txt', session=pip.download.PipSession())],
 
       license='Apache 2.0',
       classifiers=(
