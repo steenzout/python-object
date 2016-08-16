@@ -20,4 +20,4 @@
 
 .. moduleauthor:: Pedro Salgado <steenzout@ymail.com>
 """
-__version__ = '1.0.2_rc3'
+__version__ = '1.0.2rc5'
