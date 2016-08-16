@@ -18,7 +18,7 @@ setup(name='steenzout.object',
       maintainer_email='steenzout@ymail.com',
       url='https://github.com/steenzout/python-object',
       namespace_packages=['steenzout'],
-      packages=find_packages(exclude=('*.tests', '*.tests.*', 'tests.*', 'tests', 'steenzout')),
+      packages=find_packages(exclude=('*.tests', '*.tests.*', 'tests.*', 'tests')),
       package_data={'': ['LICENSE', 'NOTICE.md']},
       install_requires=[
           str(pkg.req) for pkg in parse_requirements(
