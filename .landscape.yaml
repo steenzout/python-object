@@ -1,6 +1,7 @@
 doc-warnings: yes
 ignore-paths:
   - docs
+  - setup.py
 max-line-length: 119
 python-targets:
   - 2
