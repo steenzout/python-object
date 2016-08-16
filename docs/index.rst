@@ -12,7 +12,7 @@ steenzout.object
 
 
 API documentation
------------------
+=================
 
 This section contains information on a specific function, class, or method,
 this part of the documentation is for you.
@@ -20,5 +20,4 @@ this part of the documentation is for you.
 .. toctree::
    :maxdepth: 2
 
-   apidoc
-
+   apidoc/steenzout
