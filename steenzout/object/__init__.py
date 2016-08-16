@@ -78,3 +78,13 @@ class Object(object):
         if isinstance(other, self.__class__):
             return not self == other
         return NotImplemented
+
+
+def version():
+    """
+    Return this package version.
+
+    :return: package version.
+    :rtype: str
+    """
+    return __version__
