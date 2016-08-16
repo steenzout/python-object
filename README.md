@@ -4,6 +4,9 @@
 [![Code Health](https://landscape.io/github/steenzout/python-object/master/landscape.svg?style=flat)](https://landscape.io/github/steenzout/python-object/master)
 [![Coverage Status](https://coveralls.io/repos/github/steenzout/python-object/badge.svg?branch=master)](https://coveralls.io/r/steenzout/python-object)
 [![Requirements Status](https://requires.io/github/steenzout/python-object/requirements.svg?branch=master)](https://requires.io/github/steenzout/python-object/requirements/?branch=master)
+[![Documentation Status](https://readthedocs.org/projects/python-steenzout-object/badge/?version=latest)](http://python-steenzout-object.readthedocs.io/en/latest/?badge=latest)
+
+[![Project Stats](https://www.openhub.net/p/python-steenzout-object/widgets/project_thin_badge.gif)](https://www.openhub.net/p/python-steenzout-object/)
 
 The `steenzout.object` package provides an `Object` class with
 pre-defined `__hash__`, `__eq__` and `__ne__` functions.
