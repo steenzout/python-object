@@ -1,0 +1,23 @@
+steenzout.object
+================
+
+.. include:: README.rst
+
+
+.. toctree::
+   :maxdepth: 2
+
+   user/intro
+   user/install
+
+The API Documentation / Guide
+-----------------------------
+
+This section contains information on a specific function, class, or method,
+this part of the documentation is for you.
+
+.. toctree::
+   :maxdepth: 2
+
+   apidoc
+
