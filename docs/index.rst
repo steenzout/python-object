@@ -10,8 +10,9 @@ steenzout.object
    user/intro
    user/install
 
-The API Documentation / Guide
------------------------------
+
+API documentation
+-----------------
 
 This section contains information on a specific function, class, or method,
 this part of the documentation is for you.
