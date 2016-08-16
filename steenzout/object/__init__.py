@@ -25,15 +25,13 @@ from steenzout.object.version import __version__
 
 
 class Object(object):
-    """
-    Object class with a `__hash__`, `__eq__` and `__ne__` implementation.
-    """
+    """Object class with a `__hash__`, `__eq__` and `__ne__` implementation."""
 
     def __hash__(self):
         """
-        Called by built-in function :function:`object.__hash__` and
-        for operations on members of hashed collections
-        (see :function:`object.__hash__`).
+        Called by built-in function :function:`object.__hash__` and for operations on members of hashed collections.
+
+        See :function:`object.__hash__`.
 
         :return: hash value.
         :rtype: integer
