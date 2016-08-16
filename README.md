@@ -5,6 +5,59 @@
 [![Coverage Status](https://coveralls.io/repos/github/steenzout/python-object/badge.svg?branch=master)](https://coveralls.io/r/steenzout/python-object)
 [![Requirements Status](https://requires.io/github/steenzout/python-object/requirements.svg?branch=master)](https://requires.io/github/steenzout/python-object/requirements/?branch=master)
 
+The `steenzout.object` package provides an `Object` class with
+pre-defined `__hash__`, `__eq__` and `__ne__` functions.
+
+What's the difference to the `object` class?
+
+Example:
+
+```
+>>> o1 = object()
+>>> o2 = object()
+>>> 
+>>> assert o1 == o2
+>>> Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AssertionError
+```
+
+If you use `steenzout.object.Object`:
+
+```
+>>> from steenzout.object import Object
+>>> 
+>>> o1 = Object()
+>>> o2 = Object()
+>>> 
+>>> assert o1 == o2
+>>>
+```
+
+If you sub-class the `Object` class,
+`==` and `!=` will still work as expected:
+
+```
+>>> class A(Object):
+>>>     pass
+... 
+... 
+
+>>> class B(Object):
+>>>     pass
+... 
+... 
+
+>>> a = A()
+>>> b = B()
+
+>>> a == b
+>>> False
+
+>>> a != b
+>>> True
+```
+
 
 ## Test
 
@@ -17,3 +70,8 @@ $ tox
 ```
 $ tox -e docs
 ```
+
+
+## Links
+
+- [stackoverflow > Elegant ways to support equivalence (“equality”) in Python classes](http://stackoverflow.com/questions/390250/elegant-ways-to-support-equivalence-equality-in-python-classes)
