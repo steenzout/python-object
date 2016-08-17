@@ -29,7 +29,7 @@ class Object(object):
 
     def __hash__(self):
         """
-        Called by built-in function :function:`object.__hash__` and for operations on members of hashed collections.
+        Called by built-in function :function:`object.__hash__`.
 
         See :function:`object.__hash__`.
 
