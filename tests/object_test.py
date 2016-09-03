@@ -42,3 +42,9 @@ class ObjectTestCase(unittest.TestCase):
         self.assertFalse(o1 != o2)
 
         self.assertTrue(o1 != a)
+
+    def test_repr(self):
+        """Test for the __repr__ function."""
+        o1 = Object()
+
+        self.assertEqual("<class 'steenzout.object.Object'>({})", repr(o1))
