@@ -77,6 +77,11 @@ class Object(object):
             return not self == other
         return NotImplemented
 
+    def __repr__(self):
+        """Return the “official” string representation of this object.
+        """
+        return '%s(%r)' % (self.__class__, self.__dict__)
+
 
 def version():
     """
