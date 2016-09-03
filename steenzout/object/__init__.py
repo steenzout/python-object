@@ -14,43 +14,37 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-"""
-.. module:: steenzout.object
-    :synopsis: Python object package.
-
-.. moduleauthor:: Pedro Salgado <steenzout@ymail.com>
-"""
+"""Object module."""
 
 from steenzout.object.version import __version__
 
 
 class Object(object):
-    """Object class with a `__hash__`, `__eq__` and `__ne__` implementation."""
+    """Object class with a `__hash__`, `__eq__`, `__ne__` and `__repr__` implementation."""
 
     def __hash__(self):
-        """
-        Called by built-in function :function:`object.__hash__`.
+        """Called by built-in function :function:`object.__hash__`.
 
-        See :function:`object.__hash__`.
+        See :py:function:`object.__hash__`.
 
-        :return: hash value.
-        :rtype: integer
+        Returns:
+            (integer): hash value.
         """
         return hash(tuple(sorted(self.__dict__.items())))
 
     def __eq__(self, other):
-        """
-        Rich comparison function for the `==` operator.
+        """Rich comparison function for the `==` operator.
 
-        :param other: instance to be compared against.
-        :type other: :class:`Object`.
+        Args:
+            other (:py:class:`Object`): instance to be compared against.
 
-        :raises: :class:`exceptions.NotImplementedError`
-            in case the `other` instance is not a `Object` object.
+        Raises:
+            :py:class:`exceptions.NotImplementedError` when
+                the `other` instance is not a `Object` object.
 
-        :return: True in case both instances represent the same object;
-            False otherwise.
-        :rtype: bool
+        Returns:
+            (bool): True in case both instances represent the same object;
+                False otherwise.
         """
         if other is self:
             return True
@@ -60,18 +54,18 @@ class Object(object):
             return NotImplemented
 
     def __ne__(self, other):
-        """
-        Rich comparison function for the `!=` operator.
+        """Rich comparison function for the `!=` operator.
 
-        :param other: instance to be compared against.
-        :type other: :class:`Object`.
+        Args:
+            other (:py:class:`Object`): instance to be compared against.
 
-        :raises: :class:`exceptions.NotImplementedError`
-            in case the `other` instance is not a `Object` object.
+        Raises:
+            :class:`exceptions.NotImplementedError` when
+                the `other` instance is not a `Object` object.
 
-        :return: True in case `self` and `other`
+        Returns:
+            (bool) True in case `self` and `other`
             do not represent the same object; False otherwise.
-        :rtype: bool
         """
         if isinstance(other, self.__class__):
             return not self == other
@@ -79,15 +73,17 @@ class Object(object):
 
     def __repr__(self):
         """Return the “official” string representation of this object.
+
+        Returns:
+            (str): the “official” string representation of this object.
         """
         return '%s(%r)' % (self.__class__, self.__dict__)
 
 
 def version():
-    """
-    Return this package version.
+    """Return this package version.
 
-    :return: package version.
-    :rtype: str
+    Returns:
+        (str): package version.
     """
     return __version__

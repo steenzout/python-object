@@ -14,10 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-"""
-.. module:: steenzout.object.version
-    :synopsis: Version module.
+"""Version module."""
 
-.. moduleauthor:: Pedro Salgado <steenzout@ymail.com>
-"""
 __version__ = '1.0.2'
