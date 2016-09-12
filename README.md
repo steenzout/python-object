@@ -80,3 +80,5 @@ $ tox -e docs
 ## Links
 
 - [stackoverflow > Elegant ways to support equivalence (“equality”) in Python classes](http://stackoverflow.com/questions/390250/elegant-ways-to-support-equivalence-equality-in-python-classes)
+
+[license]:  https://raw.githubusercontent.com/steenzout/python-object/master/LICENSE    "License"
