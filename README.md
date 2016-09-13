@@ -79,6 +79,7 @@ $ tox -e docs
 
 ## Links
 
+- [Python 3 Patterns, Recipes and Idioms](http://python-3-patterns-idioms-test.readthedocs.io/en/latest/index.html)
 - [stackoverflow > Elegant ways to support equivalence (“equality”) in Python classes](http://stackoverflow.com/questions/390250/elegant-ways-to-support-equivalence-equality-in-python-classes)
 
 [license]:  https://raw.githubusercontent.com/steenzout/python-object/master/LICENSE    "License"
