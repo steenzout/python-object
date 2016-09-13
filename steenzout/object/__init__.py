@@ -16,6 +16,9 @@
 #
 """Object module."""
 
+import threading
+
+
 from steenzout.object.version import __version__
 
 
@@ -78,6 +81,27 @@ class Object(object):
             (str): the “official” string representation of this object.
         """
         return '%s(%r)' % (self.__class__, self.__dict__)
+
+
+class Singleton(type):
+    """Singleton metaclass."""
+
+    instance = None
+
+    def __call__(cls, *args, **kwargs):
+        """Return singleton instance.
+
+        Args:
+            cls: the class.
+            args: initializer function arguments.
+            kwargs: initializer function keyword arguments.
+        """
+        if cls.instance is None:
+            with threading.Lock():
+                if cls.instance is None:
+                    cls.instance = super(Singleton, cls).__call__(*args, **kwargs)
+
+        return cls.instance
 
 
 def version():
