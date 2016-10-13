@@ -16,6 +16,7 @@
 #
 """Object module."""
 
+import itertools
 import threading
 
 
@@ -81,6 +82,16 @@ class Object(object):
             (str): the “official” string representation of this object.
         """
         return '%s(%r)' % (self.__class__, self.__dict__)
+
+    def __str__(self):
+        """Returns the "informal" string representation of this object
+
+        Returns:
+            (str): the "informal" string representation of this object.
+        """
+        return ' '.join(itertools.chain(
+            ('%s.%s' % (self.__class__.__module__, self.__class__.__name__),),
+            ('%s=%s' % x for x in sorted(self.__dict__.items()))))
 
 
 class Singleton(type):
