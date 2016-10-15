@@ -14,15 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-"""
-.. module:: steenzout
-    :synopsis: github organization namespace package.
-
-.. moduleauthor:: Pedro Salgado <steenzout@ymail.com>
-"""
+"""steenzout namespace package."""
 try:
-    import pkg_resources
-    pkg_resources.declare_namespace(__name__)
-except ImportError:
     import pkgutil
     __path__ = pkgutil.extend_path(__path__, __name__)
+except ImportError:
+    import pkg_resources
+    pkg_resources.declare_namespace(__name__)
