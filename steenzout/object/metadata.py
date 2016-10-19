@@ -35,9 +35,9 @@ __classifiers__ = (
     'Programming Language :: Python :: Implementation :: PyPy'
 )
 
-__description__ = 'Steenzout Python objects.',
+__description__ = 'Steenzout Python objects.'
 
-__license__ = 'Apache 2.0',
+__license__ = 'Apache 2.0'
 
 __maintainer__ = 'Pedro Salgado'
 __maintainer_email__ = 'steenzout@ymail.com'
