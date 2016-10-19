@@ -42,8 +42,6 @@ __license__ = 'Apache 2.0',
 __maintainer__ = 'Pedro Salgado'
 __maintainer_email__ = 'steenzout@ymail.com'
 
-__package__ = 'steenzout.object'
-
 __url__ = 'https://github.com/steenzout/python-object/'
 
 __version__ = '1.0.8'

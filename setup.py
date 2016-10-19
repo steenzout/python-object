@@ -9,7 +9,7 @@ from setuptools import find_packages, setup
 
 exec(open('steenzout/object/metadata.py').read())
 
-setup(name=__package__,
+setup(name='steenzout.object',
       version=__version__,
       description=__description__,
       author=__author__,
