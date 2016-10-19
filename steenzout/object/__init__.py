@@ -103,9 +103,9 @@ class Singleton(type):
         """Return singleton instance.
 
         Args:
-            cls: the class.
-            args: initializer function arguments.
-            kwargs: initializer function keyword arguments.
+            cls (type): the class.
+            args (tuple/list): initializer function arguments.
+            kwargs (dict): initializer function keyword arguments.
         """
         if cls.instance is None:
             with threading.Lock():
