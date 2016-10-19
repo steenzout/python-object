@@ -7,7 +7,7 @@ from pip.req import parse_requirements
 
 from setuptools import find_packages, setup
 
-exec(open('steenzout/object/version.py').read())
+exec(open('steenzout/object/metadata.py').read())
 
 setup(name='steenzout.object',
       version=__version__,

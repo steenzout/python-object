@@ -20,7 +20,7 @@ import itertools
 import threading
 
 
-from steenzout.object.version import __version__
+from steenzout.object.metadata import __version__
 
 
 class Object(object):
