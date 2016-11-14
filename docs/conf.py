@@ -52,7 +52,6 @@ _version = semantic_version.Version('1.0.12')
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.coverage',
-    'sphinx.ext.imgmath',
     'sphinx.ext.napoleon',
     'sphinx.ext.viewcode',
 ]
