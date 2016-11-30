@@ -3,6 +3,13 @@ branches:
   except:
     - gh-pages
 
+cache:
+  directories:
+    - "${HOME}/.pip"
+
+before_cache:
+  - "find ${HOME}/.pip -name log -o -name __pycache__ -type d | xargs -I {} rm -rf {}"
+
 matrix:
   include:
     - python: 2.7
