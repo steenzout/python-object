@@ -1,11 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import pip.download
-
-from pip.req import parse_requirements
-
 from setuptools import find_packages, setup
+
+import pip
+import semver
+
+if 10 >= semver.parse(pip.__version__)['major']:
+    import pip._internal.download as pip_download
+    from pip._internal.req import parse_requirements
+else:
+    import pip.download as pip_download
+    from pip.req import parse_requirements
 
 exec(open('steenzout/object/metadata.py').read())
 
@@ -22,9 +28,9 @@ setup(name='steenzout.object',
       package_data={'': ['LICENSE', 'NOTICE.md']},
       install_requires=[
           str(pkg.req) for pkg in parse_requirements(
-              'requirements.txt', session=pip.download.PipSession())],
+              'requirements.txt', session=pip_download.PipSession())],
       tests_require=[
           str(pkg.req) for pkg in parse_requirements(
-              'requirements-test.txt', session=pip.download.PipSession())],
+              'requirements-test.txt', session=pip_download.PipSession())],
       license=__license__,
       classifiers=__classifiers__)
