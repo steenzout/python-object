@@ -1,33 +1,41 @@
 language: python
+
 branches:
   except:
     - gh-pages
 
+cache:
+  directories:
+    - "${HOME}/.pip"
+
+before_cache:
+  - "find ${HOME}/.pip -name log -o -name __pycache__ -type d | xargs -I {} rm -rf {}"
+
 matrix:
   include:
     - python: 2.7
-      env: TOXENV=py27
-    - python: 3.3
-      env: TOXENV=py33
     - python: 3.4
-      env: TOXENV=py34
     - python: 3.5
-      env: TOXENV=py35
     - python: 3.6
-      env: TOXENV=py36
-    - python: pypy
-      env: TOXENV=pypy
+    - python: 3.7
+      dist: xenial
+      sudo: true
+    - pypy
+
+matrix:
+  fast_finish: true
   allow_failures:
     - python: 3.6
-      env: TOXENV=py36
 
 install:
   - pip install tox
+  - pip install tox-travis
 
 script:
   - tox
 
 after_success:
+  - pylint steenzout
   - pip install coveralls
   - coveralls
 
@@ -38,3 +46,17 @@ deploy:
     secure: jde3WDudGoRBGZBrVDZIcAtu90cvje//fPqpzFtSBTg3LVpPKW/RT3sYcQQ4NcNzQpmKX2KeG7+CCilf4mNHlGUc191ZgfwazCdKb6/s/HffbPKHk8yAoQiCDkz29M4Tq4yY56nmm1tmPSN0OhBMYnywN6BbkGX9PAlq7Vv4XwnAGsJav4wJ6LE2OezPxqidirZaADdO9DXSTnxJ0d8xLCg8Eq9UXV8PI+w6s6FNTWMJKmdmvrsicu2aeV2HiUNfEduIbFsocD+bq8uZ6tcteY+W+vuwPospGOzxAUAPKC8fYSLu3uHNyCThFykg2fbUFxTYw2aaMtZbPHDDhuJ8toibt+61HyD3y8+KT5JjL4RxF5vMpFIjBXS1p/tgjtOYU2d+E4/8doi98dQO9nsnTFwewIG9PDLjU+PjCoZMtmSwmN3zmjUfvs1PUAgHce31P3hCP2akhfLjXyQU7JyjUU371CJr1V5hnd2JwWGmclXj/vUc0Xsa62cwyhP+uq3lJtlsZMSs1OlZ2D5t/oz3ozFQLTq/YWeV5BdPqW0REzgenBNUTd7LJsx4WNzAIRDi7JVDvWUm1w1sRsRh/fUxalm+UeVedqdbnb3ANWyTiKG2PJXmXSip6kBXZ+sa6PBPpWLUozHYw1YIlyBupTLYR/EQqg8SSN+XJMTVHIZ0C0Y=
   on:
     tags: true
+
+notifications:
+  email: false
+  slack:
+    template:
+      - "%{repository_name}@%{branch} %{commit} : [%{build_number}] %{result} "
+      - "%{build_url}"
+      - "'%{commit_subject}' by %{author}"
+      - "%{elapsed_time} : %{duration}"
+      - "%{message}"
+    rooms:
+      secure: cMw16G5yS/zFg74NZnd/e0KeLlYvG2R1ZNM0JsGW7z+9gfCIBEGr/2aDLR/DPw4WejSpeCWVIS+rqmfYGKKRR4irRkCNxGJCYe/Tfmo9/ZNH9rXK0FM18jQyUx8y6pyMGW+u4f4UWf+hQXrbh5ucjOrCAeWIREIWlOVWo0L0/V8=
+    on_success: always
+    on_failure: always
