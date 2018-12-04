@@ -5,6 +5,13 @@ import pip
 
 from setuptools import find_packages, setup
 
+if 10 <= int(pip.__version__.split('.')[0]):
+    import pip._internal.download as pip_download
+    from pip._internal.req import parse_requirements
+else:
+    import pip.download as pip_download
+    from pip.req import parse_requirements
+
 if int(pip.__version__.split('.')[0]) >= 10:
     from pip._internal import download as pip_download
     from pip._internal.req import parse_requirements
