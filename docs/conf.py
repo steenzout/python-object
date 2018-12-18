@@ -38,7 +38,7 @@ from recommonmark.parser import CommonMarkParser
 
 
 _package = 'steenzout.object'
-_version = semantic_version.Version('1.0.14')
+_version = semantic_version.Version('1.0.16')
 
 # -- General configuration ------------------------------------------------
 
