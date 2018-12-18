@@ -44,4 +44,4 @@ __maintainer_email__ = 'steenzout@ymail.com'
 
 __url__ = 'https://github.com/steenzout/python-object/'
 
-__version__ = '1.0.14'
+__version__ = '1.0.16'
