@@ -19,7 +19,7 @@
 __author__ = 'Pedro Salgado'
 __author_email__ = 'steenzout@ymail.com'
 
-__classifiers__ = (
+__classifiers__ = [
     'Development Status :: 5 - Production/Stable',
     'Intended Audience :: Developers',
     'Natural Language :: English',
@@ -33,7 +33,7 @@ __classifiers__ = (
     'Programming Language :: Python :: 3.6',
     'Programming Language :: Python :: Implementation :: CPython',
     'Programming Language :: Python :: Implementation :: PyPy'
-)
+]
 
 __description__ = 'Steenzout Python objects.'
 
