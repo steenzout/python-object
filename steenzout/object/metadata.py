@@ -19,7 +19,7 @@
 __author__ = 'Pedro Salgado'
 __author_email__ = 'steenzout@ymail.com'
 
-__classifiers__ = (
+__classifiers__ = [
     'Development Status :: 5 - Production/Stable',
     'Intended Audience :: Developers',
     'Natural Language :: English',
@@ -27,13 +27,12 @@ __classifiers__ = (
     'Programming Language :: Python',
     'Programming Language :: Python :: 2.7',
     'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.3',
-    'Programming Language :: Python :: 3.4',
     'Programming Language :: Python :: 3.5',
     'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7',
     'Programming Language :: Python :: Implementation :: CPython',
     'Programming Language :: Python :: Implementation :: PyPy'
-)
+]
 
 __description__ = 'Steenzout Python objects.'
 
@@ -42,6 +41,8 @@ __license__ = 'Apache 2.0'
 __maintainer__ = 'Pedro Salgado'
 __maintainer_email__ = 'steenzout@ymail.com'
 
+__package__ = 'steenzout.object'
+
 __url__ = 'https://github.com/steenzout/python-object/'
 
-__version__ = '1.0.14'
+__version__ = '1.0.16'
